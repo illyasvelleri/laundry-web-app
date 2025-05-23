@@ -33,7 +33,7 @@ export default function Solutions() {
             title: "Commercial Laundry Solutions",
             description:
                 "Reliable and efficient laundry services tailored for businesses like hotels, hostels, salons, and more. We ensure timely pickups, quality cleaning, and prompt deliveries to keep your operations running smoothly.",
-            image: "/images/commercial-laundry.jpg",
+            image: "/Images/commercial-laundry.jpg",
             features: [
                 { icon: <Building size={20} />, text: "Hotels & Hostels" },
                 { icon: <BriefcaseBusiness size={20} />, text: "Salons & Spas" },
@@ -50,7 +50,7 @@ export default function Solutions() {
             title: "Home Laundry Services",
             description:
                 "Experience hassle-free laundry with our home services. We pick up, wash, fold, and deliver your clothes, ensuring they’re fresh and ready to wear. Perfect for busy individuals and families.",
-            image: "/images/residential-laundry.jpg",
+            image: "/Images/residential-laundry.jpg",
             features: [
                 { icon: <Home size={20} />, text: "Doorstep Pickup" },
                 { icon: <Shirt size={20} />, text: "Delicate Care" },
@@ -99,8 +99,8 @@ export default function Solutions() {
                         <button
                             onClick={() => setActiveTab("commercial")}
                             className={`flex items-center px-6 py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${activeTab === "commercial"
-                                    ? "bg-blue-600 text-white shadow-md"
-                                    : "text-gray-700 hover:text-blue-600"
+                                ? "bg-blue-600 text-white shadow-md"
+                                : "text-gray-700 hover:text-blue-600"
                                 }`}
                         >
                             <Building size={18} className="mr-2" />
@@ -109,8 +109,8 @@ export default function Solutions() {
                         <button
                             onClick={() => setActiveTab("residential")}
                             className={`flex items-center px-6 py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${activeTab === "residential"
-                                    ? "bg-blue-600 text-white shadow-md"
-                                    : "text-gray-700 hover:text-blue-600"
+                                ? "bg-blue-600 text-white shadow-md"
+                                : "text-gray-700 hover:text-blue-600"
                                 }`}
                         >
                             <Home size={18} className="mr-2" />
@@ -215,19 +215,17 @@ export default function Solutions() {
                         </div>
 
                         {/* CTA */}
-                        <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                            <Link
-                                href={
-                                    activeTab === "commercial"
-                                        ? "/commercial-services"
-                                        : "/home-services"
-                                }
-                            >
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeIn}
+                            className="flex flex-col sm:flex-row gap-4 mt-12 justify-center"
+                        >
+                            <Link href="/services">
                                 <button className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 group">
                                     <span>
-                                        {activeTab === "commercial"
-                                            ? "Explore Commercial Services"
-                                            : "Book Home Service"}
+                                        {activeTab === "commercial" ? "Explore Commercial Services" : "Book Home Service"}
                                     </span>
                                     <ChevronRight
                                         size={20}
@@ -240,7 +238,7 @@ export default function Solutions() {
                                     Contact Us
                                 </button>
                             </Link>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>
