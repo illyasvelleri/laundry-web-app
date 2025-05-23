@@ -74,7 +74,7 @@ export default function LaundryHero() {
                 ref={containerRef}
                 className="min-h-screen flex flex-col items-center relative z-10 px-6 lg:px-16 xl:px-20"
             >
-                <Header />
+                <Header cart={[]} />
 
                 <div className="w-full max-w-7xl mx-auto lg:mt-10 flex flex-col lg:flex-row items-center justify-between gap-12 pt-12">
                     {/* Left Text Content */}
