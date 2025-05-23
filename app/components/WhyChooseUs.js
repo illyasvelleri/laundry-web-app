@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import { useRef } from "react";
-import { useInView } from "framer-motion";
-import { motion } from "framer-motion";
-import CountUp from "react-countup";
-import Link from "next/link";
-import { CheckCircle, Sparkles, ThumbsUp, ShieldCheck } from "lucide-react";
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
+import Link from 'next/link';
+import { CheckCircle, Sparkles, ThumbsUp, ShieldCheck } from 'lucide-react';
 
 export default function WhyChooseUs() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   const staggerChildren = {
@@ -25,20 +25,18 @@ export default function WhyChooseUs() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3
-      }
-    }
+        staggerChildren: 0.3,
+      },
+    },
   };
 
   return (
-    <section className="w-full py-24 px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
+    <section className="w-full py-24 px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden pb-20 md:pb-0">{/*  */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
         <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full bg-blue-100 blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-rose-100 blur-3xl"></div>
       </div>
-
       <div className="max-w-6xl mx-auto relative z-5">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,53 +54,46 @@ export default function WhyChooseUs() {
             Experience convenience, quality, and reliability with every wash.
           </p>
         </motion.div>
-
-        {/* Stats */}
         <motion.div
           ref={ref}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate={isInView ? 'visible' : 'hidden'}
           variants={staggerChildren}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
         >
-          {/* Stat 1 */}
-          <motion.div 
+          <motion.div
             variants={fadeInUp}
-            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl border border-gray-100 flex flex-col items-center text-center"
+            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl border border-gray-100 flex flex-col items-center text-center contain-content"
           >
             <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
               <ThumbsUp className="h-8 w-8 text-blue-600" />
             </div>
             <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-2">
-              {isInView ? <CountUp end={4.8} decimals={1} duration={2.5} /> : "0"}
+              {isInView ? <CountUp end={4.8} decimals={1} duration={2.5} /> : '0'}
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Customer Rating</h3>
             <p className="text-gray-600">
               Loved by hundreds of happy clients across the city for speed and reliability.
             </p>
           </motion.div>
-
-          {/* Stat 2 */}
-          <motion.div 
+          <motion.div
             variants={fadeInUp}
-            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl border border-gray-100 flex flex-col items-center text-center"
+            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl border border-gray-100 flex flex-col items-center text-center contain-content"
           >
             <div className="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center mb-6">
               <Sparkles className="h-8 w-8 text-pink-500" />
             </div>
             <div className="text-5xl font-bold bg-gradient-to-r from-pink-600 to-pink-400 bg-clip-text text-transparent mb-2">
-              {isInView ? <CountUp end={1500} duration={2.5} suffix="+" /> : "0"}
+              {isInView ? <CountUp end={1500} duration={2.5} suffix="+" /> : '0'}
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Clothes Washed</h3>
             <p className="text-gray-600">
-              From delicates to heavy loads — we've handled them all with care and precision.
+              From delicates to heavy loads — we’ve handled them all with care and precision.
             </p>
           </motion.div>
-
-          {/* Stat 3 */}
-          <motion.div 
+          <motion.div
             variants={fadeInUp}
-            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl border border-gray-100 flex flex-col items-center text-center"
+            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl border border-gray-100 flex flex-col items-center text-center contain-content"
           >
             <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
               <ShieldCheck className="h-8 w-8 text-green-600" />
@@ -116,9 +107,7 @@ export default function WhyChooseUs() {
             </p>
           </motion.div>
         </motion.div>
-
-        {/* Features List */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -127,21 +116,21 @@ export default function WhyChooseUs() {
         >
           {[
             {
-              title: "Free Pickup & Delivery",
-              description: "We come to your doorstep and deliver fresh clothes right on time."
+              title: 'Free Pickup & Delivery',
+              description: 'We come to your doorstep and deliver fresh clothes right on time.',
             },
             {
-              title: "Quick Turnaround",
-              description: "Same-day or next-day service available — because your time matters."
+              title: 'Quick Turnaround',
+              description: 'Same-day or next-day service available — because your time matters.',
             },
             {
-              title: "Affordable Packages",
-              description: "Tailored pricing for households, hostels, and commercial clients."
+              title: 'Affordable Packages',
+              description: 'Tailored pricing for households, hostels, and commercial clients.',
             },
             {
-              title: "Stain Removal Experts",
-              description: "Advanced techniques to ensure spotless results every time."
-            }
+              title: 'Stain Removal Experts',
+              description: 'Advanced techniques to ensure spotless results every time.',
+            },
           ].map((feature, index) => (
             <div key={index} className="flex items-start p-4">
               <CheckCircle className="h-6 w-6 text-blue-500 mt-1 flex-shrink-0" />
@@ -152,9 +141,7 @@ export default function WhyChooseUs() {
             </div>
           ))}
         </motion.div>
-
-        {/* CTA */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
