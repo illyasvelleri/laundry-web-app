@@ -150,7 +150,7 @@ export default function Services() {
         </div>
 
         {/* Scrollable Container for Mobile */}
-        <div className="overflow-x-auto md:overflow-visible custom-scroll px-1 pb-3">
+        <div className="overflow-x-auto md:overflow-visible custom-scroll px-1 pb-3 my-0">
           <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 min-w-[700px] md:min-w-0 px-2">
             {services.map((s, i) => (
               <motion.article
