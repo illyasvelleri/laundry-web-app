@@ -132,7 +132,7 @@ export default function Header({ cart = [] }) {
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-blue-600 rounded-xl flex items-center justify-center">
             <Image
-              src="/images/logo.jpg"
+              src="/Images/fallback.jpg"
               alt="Fast Laundry Logo"
               width={24}
               height={24}
@@ -141,7 +141,7 @@ export default function Header({ cart = [] }) {
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAIuwO6N4Xh5gAAAABJRU5ErkJggg=="
               quality={75}
               onError={(e) => {
-                e.target.src = '/images/fallback.jpg';
+                e.target.src = '/Images/fallback.jpg';
               }}
             />
           </div>

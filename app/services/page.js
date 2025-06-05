@@ -315,7 +315,7 @@ export default function ServicesPage() {
                             quality={75}
                             priority={activeTab === 'commercial' && service.id === 1}
                             onError={(e) => {
-                              e.target.src = '/images/fallback.jpg';
+                              e.target.src = '/Images/fallback.jpg';
                             }}
                           />
                         </div>

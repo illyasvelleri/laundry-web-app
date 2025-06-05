@@ -80,7 +80,7 @@ export default function Profile() {
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAIuwO6N4Xh5gAAAABJRU5ErkJggg=="
                 quality={75}
                 onError={(e) => {
-                  e.target.src = '/images/fallback.jpg';
+                  e.target.src = '/Images/fallback.jpg';
                 }}
               />
             </div>
