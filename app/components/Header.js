@@ -116,7 +116,7 @@ export default function Header({ cart = [] }) {
     { href: '/services', label: 'Services', icon: Sparkles },
     { href: '/orders', label: 'Orders', icon: ClipboardList },
     { href: '/profile', label: 'Profile', icon: User },
-    { href: '/cart', label: 'Cart', icon: ShoppingCart },
+    { href: '/pickup', label: 'Pick-Up', icon: ShoppingCart },
   ];
 
   const isActive = (href) => pathname === href;
