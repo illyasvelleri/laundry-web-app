@@ -399,7 +399,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Building, Home, CheckCircle, Truck, Clock, Star, ShoppingCart, ChevronLeft, ChevronRight, Play, Sparkles, Award, Users } from 'lucide-react';
+import { Building, Home, CheckCircle, Truck, ShoppingCart, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import Header from '../components/Header';
 
 // Animation variants
@@ -480,7 +480,7 @@ export default function ServicesPage() {
       setCarouselIndex((prev) => (prev + 1) % carouselSlides.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, carouselSlides.length]);
 
   useEffect(() => {
     setIsClient(true);
@@ -601,7 +601,7 @@ export default function ServicesPage() {
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Enhanced Carousel */}
-              <div className="relative w-full h-[500px] sm:h-[600px] rounded-3xl overflow-hidden shadow-2xl mb-8">
+              <div className="relative w-full h-[50vh] sm:h-[600px] rounded-3xl overflow-hidden shadow-2xl mb-8">
                 <AnimatePresence initial={false}>
                   <motion.div
                     key={carouselIndex}
@@ -619,7 +619,7 @@ export default function ServicesPage() {
                       className="object-cover"
                       quality={90}
                       placeholder="blur"
-                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAIuwO6N4Xh5gAAAABJRU5ErkJggg=="
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAIuwO6N4Xh5g=="
                       onError={(e) => { e.target.src = '/images/fallback.jpg'; }}
                     />
                     
@@ -659,7 +659,7 @@ export default function ServicesPage() {
                               </h1>
                             </motion.div>
 
-                            /* Description */
+                            {/* Description */}
                             <motion.p
                               initial={{ opacity: 0, x: -30 }}
                               animate={{ opacity: 1, x: 0 }}
@@ -682,10 +682,6 @@ export default function ServicesPage() {
                               >
                                 Book Now - Free Pickup
                                 <Truck className="w-5 h-5 inline ml-2 group-hover:translate-x-1 transition-transform" />
-                              </button>
-                              <button className="group bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30">
-                                <Play className="w-5 h-5 inline mr-2" />
-                                Watch Demo
                               </button>
                             </motion.div>
                           </div>
@@ -759,60 +755,6 @@ export default function ServicesPage() {
                   />
                 </div>
               </div>
-
-              {/* Enhanced Benefits Cards */}
-              <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={ANIMATION_VARIANTS.fadeIn}
-              >
-                {[
-                  { icon: Clock, text: 'Free Pickup & Delivery', subtitle: 'Across UAE', color: 'blue' },
-                  { icon: Star, text: '4.9/5 Rating', subtitle: '10,000+ Reviews', color: 'yellow' },
-                  { icon: Truck, text: 'Same Day Service', subtitle: 'Express Available', color: 'green' },
-                  { icon: Award, text: 'Premium Quality', subtitle: 'Guaranteed', color: 'purple' },
-                ].map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    className="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/50 hover:border-blue-200"
-                    variants={ANIMATION_VARIANTS.slideIn}
-                    custom={index}
-                    whileHover={{ y: -5 }}
-                  >
-                    <div className={`w-12 h-12 bg-gradient-to-br from-${benefit.color}-500 to-${benefit.color}-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <benefit.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h4 className="font-bold text-gray-900 mb-1">{benefit.text}</h4>
-                    <p className="text-sm text-gray-600">{benefit.subtitle}</p>
-                  </motion.div>
-                ))}
-              </motion.div>
-
-              {/* Trust Indicators */}
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={ANIMATION_VARIANTS.scale}
-                className="text-center mb-8"
-              >
-                <div className="flex flex-wrap justify-center items-center gap-8 text-gray-600">
-                  <div className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-blue-600" />
-                    <span className="text-sm font-medium">10,000+ Happy Customers</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Award className="w-5 h-5 text-green-600" />
-                    <span className="text-sm font-medium">ISO Certified</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="w-5 h-5 text-purple-600" />
-                    <span className="text-sm font-medium">Eco-Friendly Process</span>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </section>
 
@@ -904,7 +846,7 @@ export default function ServicesPage() {
                             sizes="80px"
                             className="object-cover group-hover:scale-110 transition-transform duration-300"
                             placeholder="blur"
-                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAIuwO6N4Xh5gAAAABJRU5ErkJggg=="
+                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAIuwO6N4Xh5g=="
                             quality={75}
                             priority={activeTab === 'commercial' && service.id === 1}
                             onError={(e) => { e.target.src = '/images/fallback.jpg'; }}
@@ -923,10 +865,10 @@ export default function ServicesPage() {
                           <div className="text-xl font-bold text-green-600">
                             {formatCurrency(service.price)}
                           </div>
-                          <div className="text-xs text-gray-600">{service.unit}</div>
+                          <div className="text-xs text-gray-500">{service.unit}</div>
                         </div>
                         {/* Service details */}
-                        <div className="pr-20">
+                        <div className="pr-40">
                           <h4 className="text-xl font-semibold text-gray-900 mb-2">
                             {service.name}
                           </h4>
@@ -935,11 +877,11 @@ export default function ServicesPage() {
                           </p>
                           <ul className="text-xs text-gray-500 space-y-1">
                             <li className="flex items-center">
-                              <CheckCircle className="w-3 h-3 text-green-500 mr-1 flex-shrink-0" />
+                              <CheckCircle className="w-3 h-3 text-blue-500 mr-1 flex-shrink-0" />
                               Quality guarantee
                             </li>
                             <li className="flex items-center">
-                              <CheckCircle className="w-3 h-3 text-green-500 mr-1 flex-shrink-0" />
+                              <CheckCircle className="w-3 h-3 text-blue-500 mr-1 flex-shrink-0" />
                               Fast delivery
                             </li>
                           </ul>
@@ -968,8 +910,8 @@ export default function ServicesPage() {
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                exit={{ y: 100, opacity: 0 }}
-                className="fixed bottom-28 left-4 right-4 z-50"
+                exit={{ opacity: 0 }}
+                className="fixed bottom-28 m-4 left-0 right-0 z-50"
               >
                 <div className="max-w-md mx-auto bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-4 shadow-2xl backdrop-blur-lg">
                   <div className="flex items-center justify-between text-white mb-3">
@@ -985,7 +927,7 @@ export default function ServicesPage() {
                   </div>
                   <button
                     onClick={handleBookNow}
-                    className="w-full bg-white text-blue-600 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+                    className="w-full bg-white text-blue-600 py-3 rounded-xl font-medium hover:bg-gray-100 transition-colors duration-200 shadow-lg"
                   >
                     Book Now - Schedule Pickup
                   </button>
