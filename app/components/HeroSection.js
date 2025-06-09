@@ -356,7 +356,7 @@ export default function LaundryHero() {
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <Image
-                  src="/images/wicker-basket.png"
+                  src="/Images/wicker-basket.png"
                   alt="Laundry service"
                   width={450}
                   height={450}
