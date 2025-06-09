@@ -320,7 +320,7 @@ export default function PickupPage() {
     if (!contactName) newErrors.contactName = 'Contact name is required';
     if (!address) newErrors.address = 'Address is required';
     if (!phone || !/^\+971\s\d{2}\s\d{3}\s\d{4}$/.test(phone)) {
-      newErrors.phone = 'Valid UAE phone number is required (e.g., +971 50 123 4567)';
+      newErrors.phone = 'Valid UAE phone number is required (e.g., +971 80 123 4567)';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -421,7 +421,7 @@ export default function PickupPage() {
                           <div className="flex items-center space-x-4">
                             <div className="relative w-14 h-14 rounded-lg overflow-hidden">
                               <Image
-                                src={item.img || '/images/fallback.jpg'}
+                                src={item.img || '/Images/fallback.jpg'}
                                 alt={item.name}
                                 fill
                                 sizes="56px"
@@ -429,7 +429,7 @@ export default function PickupPage() {
                                 placeholder="blur"
                                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAIuwO6N4Xh5g=="
                                 quality={75}
-                                onError={(e) => { e.target.src = '/images/fallback.jpg'; }}
+                                onError={(e) => { e.target.src = '/Images/fallback.jpg'; }}
                               />
                             </div>
                             <div>
@@ -576,7 +576,7 @@ export default function PickupPage() {
                       type="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="+971 50 123 4567"
+                      placeholder="+971 80 123 4567"
                       className={`w-full px-4 py-3 border ${errors.phone ? 'border-red-500' : 'border-gray-200'} rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200`}
                       required
                     />

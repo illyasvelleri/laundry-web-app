@@ -15,7 +15,7 @@ export default function Profile() {
     email: 'illyasvelleri@gmail.com',
     phone: '+971 50 123 4567',
     address: '123 Marina Bay, Dubai, UAE',
-    avatar: '/images/avatar.jpg',
+    avatar: '/Images/avatar.jpg',
   };
 
   // Dummy order history

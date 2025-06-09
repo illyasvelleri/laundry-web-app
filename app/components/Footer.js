@@ -27,13 +27,13 @@ const Footer = () => {
 
           <motion.div className="md:w-1/3" variants={fadeUp}>
             <h3 className="text-xl font-semibold mb-4">Email</h3>
-            <p>fastlaundryuae@gmail.com</p>
+            <p>laundryuae@gmail.com</p>
           </motion.div>
 
           <motion.div className="md:w-1/3" variants={fadeUp}>
             <h3 className="text-xl font-semibold mb-4">WhatsApp</h3>
-            <p>00971559900160</p>
-            <p>00971552334770</p>
+            <p>00971779900172</p>
+            <p>00971592374709</p>
           </motion.div>
         </motion.div>
       </div>
