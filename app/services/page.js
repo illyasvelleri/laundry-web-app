@@ -450,7 +450,7 @@ export default function ServicesPage() {
       title: 'Premium Laundry',
       subtitle: 'Services in UAE',
       description: 'Professional cleaning with free pickup and delivery across all Emirates.',
-      image: '/images/dry-cleaning.jpg',
+      image: '/Images/dry-cleaning.jpg',
       badge: 'Most Popular',
       stats: { customers: '10,000+', rating: '4.9' }
     },
@@ -458,7 +458,7 @@ export default function ServicesPage() {
       title: 'Lightning Fast',
       subtitle: 'Same Day Service',
       description: 'Get your laundry done in record time with our express delivery options.',
-      image: '/images/dry-cleaning.jpg',
+      image: '/Images/dry-cleaning.jpg',
       badge: 'Express',
       stats: { delivery: '2-4 Hours', satisfaction: '99%' }
     },
@@ -466,7 +466,7 @@ export default function ServicesPage() {
       title: 'Eco-Friendly',
       subtitle: 'Sustainable Cleaning',
       description: 'Green detergents and energy-efficient processes for a cleaner planet.',
-      image: '/images/dry-cleaning.jpg',
+      image: '/Images/dry-cleaning.jpg',
       badge: 'Eco-Certified',
       stats: { co2Saved: '500kg', greenProducts: '100%' }
     },
@@ -514,16 +514,16 @@ export default function ServicesPage() {
 
   const services = {
     commercial: [
-      { id: 1, name: 'Bulk Wash & Fold', price: 12, originalPrice: 18, unit: 'per kg', img: '/images/dry-cleaning.jpg' },
-      { id: 2, name: 'Commercial Dry Cleaning', price: 20, originalPrice: 28, unit: 'per piece', img: '/images/dry-cleaning.jpg' },
-      { id: 3, name: 'Express Bulk Wash', price: 10, originalPrice: 15, unit: 'per kg', img: '/images/dry-cleaning.jpg' },
+      { id: 1, name: 'Bulk Wash & Fold', price: 12, originalPrice: 18, unit: 'per kg', img: '/Images/dry-cleaning.jpg' },
+      { id: 2, name: 'Commercial Dry Cleaning', price: 20, originalPrice: 28, unit: 'per piece', img: '/Images/dry-cleaning.jpg' },
+      { id: 3, name: 'Express Bulk Wash', price: 10, originalPrice: 15, unit: 'per kg', img: '/Images/dry-cleaning.jpg' },
     ],
     residential: [
-      { id: 7, name: 'Home Wash & Fold', price: 15, originalPrice: 22, unit: 'per kg', img: '/images/dry-cleaning.jpg' },
-      { id: 8, name: 'Delicate Dry Cleaning', price: 25, originalPrice: 35, unit: 'per piece', img: '/images/dry-cleaning.jpg' },
-      { id: 9, name: 'Express Home Wash', price: 20, originalPrice: 28, unit: 'per kg', img: '/images/dry-cleaning.jpg' },
-      { id: 10, name: 'Iron & Press', price: 8, originalPrice: 12, unit: 'per piece', img: '/images/dry-cleaning.jpg' },
-      { id: 11, name: 'Bed Linen Cleaning', price: 30, originalPrice: 42, unit: 'per set', img: '/images/dry-cleaning.jpg' },
+      { id: 7, name: 'Home Wash & Fold', price: 15, originalPrice: 22, unit: 'per kg', img: '/Images/dry-cleaning.jpg' },
+      { id: 8, name: 'Delicate Dry Cleaning', price: 25, originalPrice: 35, unit: 'per piece', img: '/Images/dry-cleaning.jpg' },
+      { id: 9, name: 'Express Home Wash', price: 20, originalPrice: 28, unit: 'per kg', img: '/Images/dry-cleaning.jpg' },
+      { id: 10, name: 'Iron & Press', price: 8, originalPrice: 12, unit: 'per piece', img: '/Images/dry-cleaning.jpg' },
+      { id: 11, name: 'Bed Linen Cleaning', price: 30, originalPrice: 42, unit: 'per set', img: '/Images/dry-cleaning.jpg' },
     ],
   };
 
@@ -620,7 +620,7 @@ export default function ServicesPage() {
                       quality={90}
                       placeholder="blur"
                       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAIuwO6N4Xh5g=="
-                      onError={(e) => { e.target.src = '/images/fallback.jpg'; }}
+                      onError={(e) => { e.target.src = '/Images/fallback.jpg'; }}
                     />
                     
                     {/* Enhanced Overlay with Gradient */}
@@ -849,7 +849,7 @@ export default function ServicesPage() {
                             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAIuwO6N4Xh5g=="
                             quality={75}
                             priority={activeTab === 'commercial' && service.id === 1}
-                            onError={(e) => { e.target.src = '/images/fallback.jpg'; }}
+                            onError={(e) => { e.target.src = '/Images/fallback.jpg'; }}
                           />
                         </div>
                         {/* Pricing */}
